@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barry</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="img/barry_logo.png" alt="Barry Logo" /></a>
+        </div>
+        <nav class="nav-desktop">
+            <a href="index.html">Inicio</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Temporadas</a>
+                <div class="dropdown-content">
+                    <a href="temporada1.html">Primera temporada</a>
+                    <a href="temporada2.html">Segunda temporada</a>
+                    <a href="temporada3.html">Tercera temporada</a>
+                    <a href="temporada4.html">Cuarta temporada</a>
+                </div>
+            </div>
+            <a href="personajes.html">Personajes</a>
+            <a href="galeria.html">Galería</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>     
+    </header>
+
+    <div class="contacto-container">
+        <section class="contacto">
+            <form>
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="campo">
+                    <label for="email">Dirección de correo electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="campo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    
+        <div id="mapa">
+            <h1>Steve Allen Theater</h1>
+            <p>4773 Hollywood Blvd, Los Angeles, CA | +1 323-666-4268</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.7345972336666!2d-118.2968769242814!3d34.1019388731383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c0a95045800d%3A0x8d9411e5cfc6df5d!2sSteve%20Allen%20Theater!5e0!3m2!1ses!2sar!4v1757505728659!5m2!1ses!2sar" 
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+
+
+</body>
+
+<footer>
+        <div>©2025 WarnerMedia Direct Latin America, LLC. Todos los derechos reservados.</div>
+        <div class="iconos">
+            <a href="https://www.hbomax.com/ec/es/shows/barry/179bdb1c-83f8-4ab7-87ef-47ce3b566a13" target="_blank">
+                <img src="img/logo_hbo.png" alt="HBO">
+            </a>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script src="temporadas.js"></script>
+    
+</html>

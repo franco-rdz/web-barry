@@ -1,0 +1,868 @@
+ @font-face {
+    font-family: 'lato';
+    src: url('fonts/lato-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} 
+
+body {
+    background-color: #010105; 
+    background-image: url("img/wall.webp");
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    padding-top: 120px;
+}
+
+
+
+
+header {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(1, 1, 5, 0.8); 
+    padding: 0 140px;
+    color: white;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    box-sizing: border-box; 
+    z-index: 1000; 
+}
+
+
+header .logo img {
+    height: 110px;
+    width: 200px;
+    margin-left: 110px;
+    transition: transform 1s ease, filter 0.5s ease;
+    filter: drop-shadow(0 0 0 rgb(64, 63, 63)); 
+}
+
+header .logo img:hover {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px rgb(64, 63, 63)); /* resplandor */
+}
+
+header .nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-right: -30px;
+}
+
+header .nav-desktop a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 1.2s ease;
+    
+}
+
+header .nav-desktop a:hover {
+    color: red;
+    
+}
+
+
+
+
+/* menú desplegable */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: rgb(1, 1, 6);
+    min-width: 200px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 10px 0;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 15px; 
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 14px; 
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 0, 0, 0.3);
+    color: white; 
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    
+}
+
+
+
+
+.menu-toggle {
+    display: none; 
+    flex-direction: column;
+    cursor: pointer;
+    position: fixed; 
+    top: 20px;
+    right: 20px;
+    z-index: 1001; 
+}
+
+.menu-toggle:hover {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7)); 
+    transition: filter 0.3s ease;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* X */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+
+
+
+
+
+.back {
+    position: relative;
+    width: 100%;
+    height: 760px;
+}
+
+.back-image {
+    position: absolute;
+    margin-top: -6px;
+    width: 100%;
+    height: 103%;
+    background-image: url('img/back.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.700; 
+    z-index: -1; /* imagen detrás */
+    background-position: center 30%; 
+} 
+
+.back-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    position: absolute;
+    bottom: 215px;
+    left: 40px;
+    color: white;
+    padding: 20px;
+    max-width: 50%;
+    z-index: 1; /* texto al frente */
+    transition: transform 0.3s ease, background-color 0.6s ease; /* transición */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4), -5px -5px 6px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3); 
+    border-radius: 8px; 
+}
+
+.back-text:hover {
+    transform: translateX(2px);
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+
+
+
+
+
+.gallery-logo-container {
+    text-align: center;
+    padding-top: 15px; 
+    margin-bottom: -53px; 
+}
+
+.gallery-logo {
+    width: 10%; 
+    height: auto;
+    margin-right: 1000px;
+    margin-top: -22px;
+    margin-bottom: -15px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 100px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.gallery-image:hover {
+    transform: scale(1.1);
+}
+
+
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1001; 
+}
+
+.fullscreen-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    object-fit: contain; 
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 45px; 
+    line-height: 0.5; 
+    color: white;
+    cursor: pointer;
+    z-index: 1002;
+    transition: color 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal;
+}
+
+.close-btn:hover {
+    color: #bbb;
+}
+
+.prev-btn, .next-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.3s ease;
+    user-select: none;
+    border-radius: 3px;
+}
+
+.prev-btn {
+    left: 15px;
+}
+
+.next-btn {
+    right: 15px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.image-counter {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    color: white;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+
+
+
+
+/* .tempo {
+    position: relative;
+    width: 100%;
+    height: 760px;
+}
+
+.tempo-image {
+    margin-top: -6px;
+    margin-bottom: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/tempo.jpg'); 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.400; 
+    z-index: -1; /* imagen detrás 
+} */
+
+
+
+.contacto-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    padding: 20px 40px;
+    margin-top: 30px;
+}
+
+
+.contacto {
+    max-width: 500px;
+    width: 100%;
+    padding: 0 5px;
+    text-align: left; 
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.campo input, .campo textarea {
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 10px 40px;
+    font-size: 16px;
+    border: 1px solid #ddd; 
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.campo textarea {
+    resize: vertical; 
+}
+
+button {
+    background-color: #e90b0b;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #800b0b;
+}
+
+
+#mapa {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin-top: -80px; 
+}
+
+#mapa h1 {
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 34px;
+    color: white;
+    margin-bottom: -16px;
+}
+
+#mapa p {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 16px;
+}
+
+
+
+
+
+
+
+
+
+footer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #010105;
+    padding: 40px 40px;
+    color: white;
+}
+
+footer .iconos img {
+    width: 60px;
+    margin-right: 60px;
+    margin-left: 50px;
+    transition: transform 0.3s ease;
+}
+
+footer .iconos img:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+.personajes-carousel {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    margin-top: -30px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    height: 750px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.personaje-slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    animation: fadeIn 0.8s;
+}
+
+.personaje-slide.active {
+    display: flex; 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.personaje-imagen {
+    width: 100%;
+    max-width: 450px; 
+    height: 450px;  
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    object-position: top; 
+}
+
+.personaje-info {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+}
+
+.personaje-logo {
+    object-fit: contain; 
+    margin-bottom: 15px;
+}
+
+.personaje-descripcion {
+    margin-top: 8px;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* --- logos --- */
+
+.logo-barry {
+    width: 460px;
+    height: 50px;
+}
+
+.logo-sally {
+    width: 330px;
+    height: 40px;
+}
+
+.logo-noho {
+    width: 340px;
+    height: 40px;
+}
+
+.logo-gene {
+    width: 450px;
+    height: 40px;
+}
+
+.logo-monroe {
+    width: 450px;
+    height: 40px;
+}
+
+
+
+
+
+
+
+
+
+.temporada-gen {
+    padding: 20px 80px;
+    color: white;
+}
+
+.temporada-logo {
+    width: 45%;
+    height: auto;
+    margin-left: 330px;
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+
+.episodios-logo {
+    width: 12%;
+    height: auto;
+    margin-bottom: 18px;
+    margin-left: 2px;
+}
+
+.episodios-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px;
+}
+
+.episodio-card {
+    background-color: rgba(10, 10, 20, 0.4);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.episodio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.episodio-imagen {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.episodio-titulo {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 15px 15px 10px 15px;
+    color: #ffffff;
+}
+
+.episodio-desc {
+    font-family: 'lato', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 15px 15px 15px;
+    color: #cccccced;
+}
+
+
+
+/* --- media queries --- */
+
+@media (max-width: 1200px) {
+    header {
+        padding: 0 80px;
+    }
+    header .logo img {
+        margin-left: 0;
+    }
+    header nav {
+        gap: 40px;
+        margin-right: -40px;
+    }
+
+    .episodios-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .temporada-logo {
+        width: 420px;
+        margin-left: 0px;
+    }
+
+    .back-image {
+        position: absolute;
+        margin-top: -6px;
+        width: 100%;
+        height: 103%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .back-text {
+        font-size: 17px;
+    }
+
+    .contacto-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    #mapa {
+        margin-top: 0;
+    }
+    #mapa iframe {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px; 
+    }
+
+    header {
+        padding: 0 80px;
+        height: 80px;
+    }
+
+    header .logo img {
+        height: 90px; 
+        width: 170px;
+        margin-top: -6px;
+        margin-right: 15px;
+    }
+
+    header.active { 
+        flex-direction: column;
+        height: 100vh; 
+        justify-content: center;
+        padding: 0; 
+        background-color: rgba(1, 1, 5, 0.95);
+        visibility: visible;
+        opacity: 1; 
+    }
+
+    header.active .logo {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+        margin-right: 18px;
+    }
+
+    header .nav-desktop {
+        display: none; 
+    }
+
+    header.active nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin-right: 0;
+    }
+
+    header.active .nav-desktop a {
+        font-size: 24px;
+    }
+
+    header.active .dropdown-content a {
+        font-size: 18px;
+        color: #ccc;
+        padding: 5px 0;
+    }
+
+    header.active + .back {
+        display: none; 
+    }
+
+    header.active + .contacto-container {
+        display: none; 
+    }
+
+    header.active ~ .personajes-carousel {
+        display: none; 
+    }
+
+    header.active ~ footer {
+        display: none; 
+    }
+
+    header.active ~ .gallery {
+        display: none; 
+    }
+
+    .gallery-logo {
+        width: 40%;
+        height: auto;
+        text-align: center;
+        margin-left: 160px;
+        margin-bottom: -60px;
+    }
+
+    .gallery-container {
+        margin-top: 160px;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+    }
+
+    .back-image {
+        padding: 0;
+        position: absolute;
+        margin-top: 0;
+        margin-left: -5px;
+        width: 101%;
+        height: 82%;
+        background-size: cover;
+        background-position: center 30%;
+    }
+
+    .back-text {
+        max-width: 60%;
+        left: -5px;
+        bottom: 30%;
+        transform: translateX(2%);
+        font-size: 16px;
+    }
+
+    .back-text:hover {
+        transform: translateX(8psx);
+    }
+
+
+    .personajes-carousel {
+        width: 95%;
+        height: auto; 
+        min-height: 650px;
+        margin-top: 80px;
+        padding: 10px;
+    }
+
+    .personaje-imagen {
+        max-width: 76%;
+        height: 300px;
+    }
+    
+    .personaje-descripcion {
+        font-size: 17px;
+    }
+
+    .personajes-carousel .prev-btn,
+    .personajes-carousel .next-btn {
+        top: 24%; /* flechas */
+    }
+
+    .logo-sally {
+        width: 340px;
+        height: 50px;
+    }
+
+    .logo-noho {
+        width: 340px;
+        height: 50px;
+    }
+
+    .logo-gene {
+        width: 450px;
+        height: 50px;
+    }
+
+    .logo-monroe {
+        width: 450px;
+        height: 50px;
+    }
+
+    .contacto {
+        width: 90%;
+        margin-top: -30px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .temporada-gen {
+        padding: 20px; 
+    }
+
+    .temporada-header {
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;
+    }
+
+    .temporada-logo {
+        width: 460px;
+        margin-left: 0px;
+    }
+
+    .episodios-logo {
+        width: 80px;
+        margin-left: 3px;
+        margin-bottom: 10px;
+
+    }
+
+    .episodios-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        padding: 0;
+        gap: 15px; 
+    }
+}

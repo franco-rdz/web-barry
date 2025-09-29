@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barry</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="img/barry_logo.png" alt="Barry Logo" /></a>
+        </div>
+        <nav class="nav-desktop">
+            <a href="index.html">Inicio</a>
+           <div class="dropdown">
+                <a href="#" class="dropbtn">Temporadas</a>
+                <div class="dropdown-content">
+                    <a href="temporada1.html">Primera temporada</a>
+                    <a href="temporada2.html">Segunda temporada</a>
+                    <a href="temporada3.html">Tercera temporada</a>
+                    <a href="temporada4.html">Cuarta temporada</a>
+                </div>
+            </div>
+            <a href="personajes.html">Personajes</a>
+            <a href="galeria.html">Galería</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>     
+    </header>
+
+    <section class="personajes-carousel">
+        <div class="personaje-slide">
+            <img src="img/barry.webp" alt="Barry Berkman" class="personaje-imagen">
+            <div class="personaje-info">
+                <img src="img/barry-b.png" alt="Logo Barry Berkman" class="personaje-logo logo-barry">
+                <p class="personaje-descripcion">
+                Ex-marine y asesino a sueldo, ha vivido sumido en un mundo de violencia y desconexión emocional. 
+                Su vida está regida por la frialdad de su trabajo, pero bajo esa fachada de dureza,
+                Barry esconde una persona con una profunda sensación de vacío y desorientación. 
+                Aunque se ha ganado la vida de manera despiadada, Barry busca algo más: un propósito,
+                una forma de redención.</p>
+            </div>
+        </div>
+
+        <div class="personaje-slide">
+            <img src="img/sally.webp" alt="Sally Reed" class="personaje-imagen">
+            <div class="personaje-info">
+                <img src="img/sally-r.png" alt="Logo Sally Reed" class="personaje-logo logo-sally">
+                <p class="personaje-descripcion">
+                Sally es una actriz ambiciosa, talentosa y con una gran determinación. 
+                A lo largo de su vida, ha luchado por encontrar su lugar en el mundo del entretenimiento, 
+                enfrentándose a numerosos obstáculos, desde los prejuicios de la industria hasta las 
+                dificultades personales. A pesar de las cicatrices que deja su pasado, Sally sigue persiguiendo 
+                su sueño de ser una actriz exitosa.
+                </p>
+            </div>
+        </div>
+
+        <div class="personaje-slide">
+            <img src="img/noho.webp" alt="NoHo Hank" class="personaje-imagen">
+            <div class="personaje-info">
+                <img src="img/noho-h.png" alt="Logo NoHo Hank" class="personaje-logo logo-noho">
+                <p class="personaje-descripcion">
+                NoHo es un miembro de la mafia chechena que, a pesar de ser un criminal, 
+                destaca por su personalidad amable, optimista y algo torpe. Es el contraste perfecto con 
+                otros personajes más oscuros y peligrosos, ya que no tiene maldad genuina. Aunque está inmerso 
+                en el mundo del crimen, su actitud relajada y su deseo de agradar lo ponen en situaciones cómicas.
+                </p>
+            </div>
+        </div>
+
+        <div class="personaje-slide">
+            <img src="img/gene.webp" alt="Gene Cousineau" class="personaje-imagen">
+            <div class="personaje-info">
+                <img src="img/gene-c.png" alt="Logo Gene Cousineau" class="personaje-logo logo-gene">
+                <p class="personaje-descripcion">
+                Gene es un actor y profesor de actuación, conocido por su ego inflado y su personalidad 
+                compleja. A pesar de su fachada de sabiduría y respeto, Gene es un hombre con muchas 
+                inseguridades y defectos, lo que lo hace tanto arrogante como vulnerable. 
+                Su relación con Barry es fundamental, ya que ve en él una oportunidad para recuperar 
+                la relevancia en su vida.
+                </p>
+            </div>
+        </div>
+
+        <div class="personaje-slide">
+            <img src="img/monroe.webp" alt="Monroe Fuches" class="personaje-imagen imagen-monroe">
+            <div class="personaje-info">
+                <img src="img/monroe-f.png" alt="Logo Monroe Fuches" class="personaje-logo logo-monroe">
+                <p class="personaje-descripcion">
+                Monroe es un hombre astuto y manipulador, con un pasado oscuro como manejador de sicarios. 
+                Sirve como mentor de Barry, ayudándolo a encontrar su lugar como asesino a sueldo, aunque su 
+                relación se complica a medida que avanza la serie. Fuches es egoísta y está motivado principalmente
+                por su propio interés, utilizando a las personas a su alrededor para alcanzar sus objetivos. 
+                </p>
+            </div>
+        </div>
+
+        <span id="prev-personaje" class="prev-btn">&#10094;</span>
+        <span id="next-personaje" class="next-btn">&#10095;</span>
+    </section>
+
+</body>
+
+
+
+<footer>
+        <div>©2025 WarnerMedia Direct Latin America, LLC. Todos los derechos reservados.</div>
+        <div class="iconos">
+            <a href="https://www.hbomax.com/ec/es/shows/barry/179bdb1c-83f8-4ab7-87ef-47ce3b566a13" target="_blank">
+                <img src="img/logo_hbo.png" alt="HBO">
+            </a>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script src="personajes.js"></script>
+    <script src="temporadas.js"></script>
+    
+</html>
