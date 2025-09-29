@@ -675,7 +675,7 @@ footer .iconos img:hover {
     }
 
     header {
-        padding: 0 80px;
+        padding: 0 20px;
         height: 80px;
     }
 
@@ -747,26 +747,26 @@ footer .iconos img:hover {
         display: none; 
     }
 
-    .gallery-logo {
-        width: 40%;
+    .logo-galeria {
+        width: 100%;
         height: auto;
         text-align: center;
-        margin-left: 160px;
-        margin-bottom: -60px;
+        margin-bottom: 20px;
     }
 
     .gallery-container {
-        margin-top: 160px;
-        grid-template-columns: repeat(2, 1fr);
+        margin-top: -80px;
+        grid-template-columns: repeat(2, 3fr);
         padding: 20px;
+        margin-right: 0;
     }
 
     .back-image {
         padding: 0;
         position: absolute;
         margin-top: 0;
-        margin-left: -5px;
-        width: 101%;
+        margin-left: 0;
+        width: 100%;
         height: 82%;
         background-size: cover;
         background-position: center 30%;
@@ -774,7 +774,7 @@ footer .iconos img:hover {
 
     .back-text {
         max-width: 60%;
-        left: -5px;
+        left: 0;
         bottom: 30%;
         transform: translateX(2%);
         font-size: 16px;
@@ -807,24 +807,29 @@ footer .iconos img:hover {
         top: 24%; /* flechas */
     }
 
+    .logo-barry{
+        width: 360px;
+        height: auto;
+    }
+
     .logo-sally {
-        width: 340px;
-        height: 50px;
+        width: 260px;
+        height: auto;
     }
 
     .logo-noho {
-        width: 340px;
-        height: 50px;
+        width: 300px;
+        height: auto;
     }
 
     .logo-gene {
-        width: 450px;
-        height: 50px;
+        width: 360px;
+        height: auto;
     }
 
     .logo-monroe {
-        width: 450px;
-        height: 50px;
+        width: 360px;
+        height: auto;
     }
 
     .contacto {
