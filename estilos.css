@@ -792,7 +792,7 @@ footer .iconos img:hover {
         width: 95%;
         height: auto; 
         min-height: 650px;
-        margin-top: 80px;
+        margin-top: -4px;
         padding: 10px;
     }
 
